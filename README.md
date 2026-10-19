@@ -8,6 +8,7 @@
  ---
 
 ## Tabla de Prácticas de la Materia
+##
 
 | No. | Nombre | Descripción | Porcentaje | Estado |
 |---|---|---|---|---|
