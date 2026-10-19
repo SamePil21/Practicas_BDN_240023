@@ -8,7 +8,7 @@
  ---
 
 ## Tabla de Prácticas de la Materia
-##
+## Samuel
 
 | No. | Nombre | Descripción | Porcentaje | Estado |
 |---|---|---|---|---|
