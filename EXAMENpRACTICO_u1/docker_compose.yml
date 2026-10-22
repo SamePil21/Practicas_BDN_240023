@@ -1,0 +1,45 @@
+
+services:
+  postgres_samuel:
+    image: postgres:15-alpine
+    container_name: postgres_samuel
+    restart: always
+    environment:
+      POSTGRES_USER: samuel
+      POSTGRES_PASSWORD: "240023"
+      POSTGRES_DB: db_test_7b
+    ports:
+      - "40023:5432"
+    volumes:
+      - postgres_data_samuel:/var/lib/postgresql/data
+
+  mysql_samuel:
+    image: mysql:8.0
+    container_name: mysql_samuel
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "240023"
+      MYSQL_DATABASE: db_test_7b
+      MYSQL_USER: samuel
+      MYSQL_PASSWORD: "240023"
+    ports:
+      - "40024:3306"
+    volumes:
+      - mysql_data_samuel:/var/lib/mysql
+
+  pgadmin_samuel:
+    image: dpage/pgadmin4:7.8
+    container_name: pgadmin_samuel
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: samuel@proyectos-integradores-7b-itiid.tech
+      PGADMIN_DEFAULT_PASSWORD: "240023"
+      PGADMIN_CONFIG_SERVER_MODE: "True"
+    ports:
+      - "40022:80"
+    depends_on:
+      - postgres_samuel
+
+volumes:
+  postgres_data_samuel:
+  mysql_data_samuel:
