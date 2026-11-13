@@ -1,12 +1,12 @@
 # Practicas_BDN_240023
 
-## Prácticas de la Asignatura de Base de Datos en la Nube
+## Practicas de la Asignatura de Base de Datos en la Nube
 
-### Ingeniería en Tecnologías de la Información e Innovación Digital
+### Ingenieria en Tecnologias de la Información e Innovación Digital
 **Universidad Tecnológica de Xicotepec de Juárez (UTXJ)**  
 **Alumno:** Carlos Samuel Vargas Diego  
 **Matrícula:** 240023  
-**Docente:** M.T.I. Marco A. Ramírez Hernández  
+**Docente:** M.T.I Marco A. Ramírez Hernández  
 **Periodo:** Septiembre - Diciembre 2026  
 
 ---
@@ -15,25 +15,25 @@
 
 | No. | Nombre | Descripción | Porcentaje | Estado |
 | :-: | :--- | :--- | :-: | :-: |
-| 1. | Metodología de Evaluación de la Materia | Transcribir en libreta y comprender la metodología y formas de evaluación de la asignatura | 5 | ⚪ Concluido |
-| 2. | Conexiones Remotas para Bases de Datos SQL | Crear y administrar usuarios y privilegios para conexiones desde Internet o redes locales | 4 | ⚪ Concluido |
-| 3. | Manipulación de Datos, Relaciones, Procedimientos, Funciones y Eventos en Conexiones Remotas | Implementación y operación remota de una BD de E-Commerce (25 tablas, 72 triggers, 25 vistas, 7 roles, rutinas SQL, simulación masiva de 7,500 usuarios, +7,000 productos y documentación interactiva) | 10 | ⚪ Concluido |
+| 1. | Metodología de Evaluación de la Materia | Transcribir en libreta y comprender la metodología y formas de evaluación de la asignatura | 5 | Concluido |
+| 2. | Conexiones Remotas para Bases de Datos SQL | Crear y administrar usuarios y privilegios para conexiones desde Internet o redes locales | 4 | Concluido |
+| 3. | Manipulación de Datos, Relaciones, Procedimientos, Funciones y Eventos en Conexiones Remotas | Implementación y operación remota de una BD de E-Commerce (25 tablas, 72 triggers, 25 vistas, 7 roles, rutinas SQL, simulación masiva de 7,500 usuarios, +7,000 productos y documentación interactiva) | 10 | Concluido |
 
 ---
 
-## 🌐 Documentación Técnica Interactiva — Práctica 03 (GitHub Pages)
+## Documentación Técnica Interactiva — Práctica 03 (GitHub Pages)
 
 Accede en tiempo real a la visualización interactiva de la base de datos **`db_test`** generada a partir del respaldo final:
 
 | Recurso Interactivo | Descripción | Enlace Directo |
 | :--- | :--- | :---: |
-| **🏠 Portal Principal (Data Atlas)** | Resumen ejecutivo, KPIs del esquema y navegación general de `db_test`. | [Abrir Portal Principal](https://samepil21.github.io/Practicas_BDN_240023/Practica03/index.html) |
-| **🕸️ Modelo Entidad-Relación Extendido (MERE)** | Diagrama interactivo de las **25 tablas**, relaciones *Crow's Foot*, animaciones de flujo, filtros por los 6 módulos y conteo real de registros. | [Ver Modelo EER](https://samepil21.github.io/Practicas_BDN_240023/Practica03/modelo_eer.html) |
-| **📖 Diccionario de Datos Técnico** | Documentación detallada de atributos, tipos de datos, llaves (`PK`, `FK`, `UK`), restricciones, vistas, funciones, procedimientos, eventos y triggers. | [Ver Diccionario de Datos](https://samepil21.github.io/Practicas_BDN_240023/Practica03/diccionario_datos.html) |
+| **Portal Principal (Data Atlas)** | Resumen ejecutivo, KPIs del esquema y navegación general de `db_test`. | [Abrir Portal Principal](https://samepil21.github.io/Practicas_BDN_240023/Practica03/index.html) |
+| **Modelo Entidad-Relación Extendido (MERE)** | Diagrama interactivo de las **25 tablas**, relaciones *Crow's Foot*, animaciones de flujo, filtros por los 6 módulos y conteo real de registros. | [Ver Modelo EER](https://samepil21.github.io/Practicas_BDN_240023/Practica03/modelo_eer.html) |
+| **Diccionario de Datos Técnico** | Documentación detallada de atributos, tipos de datos, llaves (`PK`, `FK`, `UK`), restricciones, vistas, funciones, procedimientos, eventos y triggers. | [Ver Diccionario de Datos](https://samepil21.github.io/Practicas_BDN_240023/Practica03/diccionario_datos.html) |
 
 ---
 
-## 📌 Detalle de la Práctica 03: Base de Datos de E-Commerce (`db_test`)
+## Detalle de la Práctica 03: Base de Datos de E-Commerce (`db_test`)
 
 ### 1. Objetivo
 Implementar, manipular y administrar una base de datos relacional de E-Commerce en un entorno de nube mediante conexiones remotas e instrucciones SQL, aplicando relaciones, restricciones de integridad, roles y privilegios, así como procedimientos almacenados, funciones, triggers, vistas y eventos para automatizar operaciones, ejecutar simulaciones de población masiva, verificar la consistencia y trazabilidad de la información, y documentar la estructura y evolución de la base de datos.
@@ -94,9 +94,9 @@ Se implementó el esquema de control de acceso basado en roles (RBAC) sobre las 
 * `evt_depurar_logs_antiguos`: Se ejecuta diariamente para depurar registros en `tb_logs` con antigüedad mayor a 90 días.
 
 #### Escenarios de Simulación Ejecutados (7,500 Usuarios + Productos)
-* **Escenario 1 (Test 1):** `CALL sp_simular_usuarios_masivo(500, 'Hombre', 'US', NULL, NULL, 100);` → 500 usuarios masculinos de Estados Unidos.
-* **Escenario 2 (Test 2):** `CALL sp_simular_usuarios_masivo(2000, '*', '*', 19, 35, 100);` → 2,000 usuarios de diversos países entre 19 y 35 años.
-* **Escenario 3 (Test 3):** `CALL sp_simular_usuarios_masivo(5000, '*', '*', NULL, NULL, 80);` → 5,000 usuarios con distribución probabilística del 80% activos (`b'1'`) y 20% inactivos (`b'0'`).
+* **Escenario 1 (Test 1):** `CALL sp_simular_usuarios_masivo(500, 'Hombre', 'US', NULL, NULL, 100);` - 500 usuarios masculinos de Estados Unidos.
+* **Escenario 2 (Test 2):** `CALL sp_simular_usuarios_masivo(2000, '*', '*', 19, 35, 100);` - 2,000 usuarios de diversos países entre 19 y 35 años.
+* **Escenario 3 (Test 3):** `CALL sp_simular_usuarios_masivo(5000, '*', '*', NULL, NULL, 80);` - 5,000 usuarios con distribución probabilística del 80% activos (`b'1'`) y 20% inactivos (`b'0'`).
 * **Población de Productos:** Más de 7,000 productos distribuidos entre vendedores remotos (`seller1` y `seller2`), asignados a categorías y subcategorías garantizando el mínimo de 5 productos por categoría e incluyendo productos activos e inactivos (`status = b'0'`).
 
 ---
