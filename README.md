@@ -1,309 +1,159 @@
-================================================================================
+<div align="center">
 
-PRACTICA 04: PROCESOS DE SIMULACION DE COMPRA
+# Práctica 04: Procesos de Simulación de Compra
 
-================================================================================
+**Base de Datos en la Nube** · Ingeniería en Tecnologías de la Información e Innovación Digital
 
+![Motor](https://img.shields.io/badge/Motor-MySQL-0284C7?style=for-the-badge)
+![Base de Datos](https://img.shields.io/badge/Base_de_Datos-db__test-7C3AED?style=for-the-badge)
+![Casos de Prueba](https://img.shields.io/badge/Casos_de_Prueba-5_Escenarios-4F46E5?style=for-the-badge)
+![Estado](https://img.shields.io/badge/Documentación-Activa-0EA5E9?style=for-the-badge)
 
+<br>
 
-Asignatura: Base de Datos en la Nube
+[![Portal Principal](https://img.shields.io/badge/Abrir_Portal_Principal-0284C7?style=for-the-badge)](https://samepil21.github.io/Practicas_BDN_240023/Practica04/index.html)
+[![Modelo EER](https://img.shields.io/badge/Ver_Modelo_EER-7C3AED?style=for-the-badge)](https://samepil21.github.io/Practicas_BDN_240023/Practica04/modelo_eer.html)
+[![Diccionario de Datos](https://img.shields.io/badge/Ver_Diccionario_de_Datos-4F46E5?style=for-the-badge)](https://samepil21.github.io/Practicas_BDN_240023/Practica04/diccionario_datos.html)
 
-Carrera: Ingenieria en Tecnologias de la Informacion e Innovacion Digital
+</div>
 
-Base de Datos: db_test (MySQL)
+---
 
-Repositorio: Practicas_BDN_240023
+## Documentación Interactiva (GitHub Pages)
 
-Autor: SamePil21
+| Recurso | Descripción | Enlace Directo |
+| :--- | :--- | :--- |
+| **Portal Principal (Inicio)** | Resumen general del respaldo, métricas y vistas de los 5 casos. | [Abrir `index.html`](https://samepil21.github.io/Practicas_BDN_240023/Practica04/index.html) |
+| **Modelo Entidad-Relación (EER)** | Diagrama interactivo de tablas, llaves primarias y relaciones FK. | [Abrir `modelo_eer.html`](https://samepil21.github.io/Practicas_BDN_240023/Practica04/modelo_eer.html) |
+| **Diccionario de Datos** | Detalle de columnas, tipos de datos, restricciones, llaves y vistas. | [Abrir `diccionario_datos.html`](https://samepil21.github.io/Practicas_BDN_240023/Practica04/diccionario_datos.html) |
 
+---
 
+## Resumen Técnico de la Base de Datos
 
---------------------------------------------------------------------------------
+| Propiedad | Detalle |
+| :--- | :--- |
+| **Base de Datos** | `db_test` (MySQL) |
+| **Respaldo SQL** | `Practica04/Bakups/sql21noche.sql` |
+| **Columnas Totales** | 227 columnas |
+| **Objetos Programables** | 31 vistas (incluyendo `vw_practica04_caso_1` a `vw_practica04_caso_5`), 6 funciones, 3 procedimientos almacenados y 2 eventos |
+| **Repositorio** | `SamePil21/Practicas_BDN_240023` (Rama `Practica04`) |
 
-ENLACES DE DOCUMENTACION INTERACTIVA (GITHUB PAGES)
+---
 
---------------------------------------------------------------------------------
+## Matriz de Casos de Prueba
 
+| Caso | Escenario | Tipo de Usuario | Método de Pago | Resultado Final |
+| :---: | :--- | :--- | :--- | :--- |
+| **01** | Compra exitosa, sin modificaciones | Usuario nuevo | Tarjeta de débito (pago único) | Entregada en domicilio |
+| **02** | Detalle en último pago, reclamación y reenvío | Usuario registrado | Tarjeta de crédito (6 meses) | 5 pagos autorizados, 1 rechazado; reenvío por daño |
+| **03** | Cancelación parcial, ajuste y reembolso parcial | Usuario registrado | Tarjeta digital Spin (pago único) | Orden ajustada, reembolso parcial y entrega |
+| **04** | Mismo proveedor y punto de recolección | Usuario registrado | Transferencia SPEI (pago único) | Recogida en punto de recolección |
+| **05** | Compra fallida por falta de inventario | Usuario registrado | Cupón de regalo | Orden cancelada y cupón reasignado |
 
+---
 
-- Portal Principal (Inicio):
+## Detalle de los Casos de Prueba
 
-  https://samepil21.github.io/Practicas_BDN_240023/Practica04/index.html
+### Caso de Prueba 1: Compra exitosa, sin modificaciones
+> Flujo completo de registro de cliente nuevo, selección de productos, pago único con tarjeta de débito y entrega exitosa.
 
-
-
-- Diccionario de Datos:
-
-  https://samepil21.github.io/Practicas_BDN_240023/Practica04/diccionario_datos.html
-
-
-
-- Modelo Entidad-Relacion (EER):
-
-  https://samepil21.github.io/Practicas_BDN_240023/Practica04/modelo_eer.html
-
-
-
-- Repositorio en GitHub (Rama Practica04):
-
-  https://github.com/SamePil21/Practicas_BDN_240023/tree/Practica04
-
-
-
---------------------------------------------------------------------------------
-
-RESUMEN DEL RESPALDO (db_test)
-
---------------------------------------------------------------------------------
-
-
-
-El portal de documentacion fue generado a partir del respaldo SQL ubicado en
-
-Bakups/sql21noche.sql, integrando las estructuras y evidencias de los 5 casos
-
-de prueba:
-
-
-
-- Columnas documentadas: 227
-
-- Vistas: 31 (incluye vw_practica04_caso_1 a vw_practica04_caso_5)
-
-- Funciones: 6
-
-- Procedimientos almacenados: 3
-
-- Eventos programados: 2
-
-- Evidencia transaccional destacada: 5 carritos (tb_carts), 5 direcciones
-
-  (tb_user_addresses), 5 tipos y metodos de pago (tbc_payment_methods_types y
-
-  tbd_user_payment_methods), 4 envios (tb_shipments), 2 cancelaciones y
-
-  reembolsos (tb_cancellations y tb_refunds) y 1 devolucion (tb_returns).
-
-
-
---------------------------------------------------------------------------------
-
-CASOS DE PRUEBA IMPLEMENTADOS
-
---------------------------------------------------------------------------------
-
-
-
-CASO DE PRUEBA 1: "Compra Exitosa, sin modificaciones"
-
-Vista asociada: vw_practica04_caso_1
-
-
-
-1. Un usuario nuevo se registra en la plataforma (rol: user_not_registered,
-
-   usuario de conexion a la BD: AppWeb o AppMobile) con sus datos personales
-
-   y de cuenta de usuario.
-
-2. El usuario creado realiza la seleccion de 5 productos disponibles (de
-
-   aproximadamente 10,000 productos disponibles) verificando su estatus.
-
+1. Un usuario nuevo se registra en la plataforma (rol: `user_not_registered`, usuario de conexión a la BD: `AppWeb` o `AppMobile`) con sus datos personales y de cuenta de usuario.
+2. El usuario creado realiza la selección de 5 productos disponibles (de aproximadamente 10,000 productos disponibles) verificando su estatus.
 3. El usuario crea 1 carrito de compra.
-
-4. El usuario agrega 5 productos con diferentes cantidades al carrito.
-
+4. El usuario agrega los 5 productos con diferentes cantidades al carrito.
 5. El usuario realiza la orden de compra.
-
-6. El usuario registra su domicilio para envio.
-
-7. El usuario registra su metodo de pago con tarjeta de debito, mediante una
-
-   cuenta simulada de 16 digitos (vinculado a su tabla dependiente).
-
-8. El usuario registra un pago unico (al pagar, el usuario de conexion activa
-
-   el rol de "buyer").
-
-9. El sistema registra la transaccion bancaria y la autoriza.
-
-10. El sistema procesa la orden marcandola como atendida.
-
+6. El usuario registra su domicilio para envío.
+7. El usuario registra su método de pago con tarjeta de débito mediante una cuenta simulada de 16 dígitos (vinculado a su tabla dependiente).
+8. El usuario registra un pago único (al pagar, el usuario de conexión activa el rol `buyer`).
+9. El sistema registra la transacción bancaria y la autoriza.
+10. El sistema procesa la orden marcándola como atendida.
 11. El usuario recibe el producto en casa.
 
+---
 
+### Caso de Prueba 2: Compra con detalles en el último pago, reclamación y reenvío
+> Simulación de compra a meses con rechazo en el último cargo por límite de crédito, seguida de reclamación por daño y reposición.
 
-
-
-CASO DE PRUEBA 2: "Compra con detalles en el ultimo pago, reclamacion y reenvio"
-
-Vista asociada: vw_practica04_caso_2
-
-
-
-1. Un usuario ya registrado (de los 10k disponibles) crea 1 carrito de compra
-
-   de 10 productos aleatorios con cantidades de 1 a 5 unidades.
-
+1. Un usuario ya registrado (de los 10,000 disponibles) crea 1 carrito de compra con 10 productos aleatorios en cantidades de 1 a 5 unidades.
 2. El usuario realiza la orden de compra.
+3. El usuario registra su domicilio para envío a un lugar distinto a su hogar (por ejemplo, dirección de trabajo).
+4. El usuario registra su método de pago con tarjeta de crédito mediante una cuenta simulada de 16 dígitos (vinculado a su tabla dependiente).
+5. El usuario registra 6 pagos mensuales (al pagar, el usuario de conexión activa el rol `buyer`).
+6. El sistema registra las transacciones bancarias: autoriza 5 pagos y rechaza el último por *"límite excedido de crédito"*.
+7. El sistema procesa la orden marcándola como atendida.
+8. El usuario recibe el producto en el domicilio indicado.
+9. El usuario reclama la devolución de un producto que llegó dañado.
+10. El sistema realiza el reenvío del producto en buenas condiciones.
 
-3. El usuario registra un domicilio para envio distinto a su hogar (por
+---
 
-   ejemplo, direccion de trabajo).
+### Caso de Prueba 3: Compra exitosa con cancelación parcial, ajuste y reembolso parcial
+> Pedido de productos de una misma categoría con ajuste posterior por cancelación de un artículo y devolución parcial del monto.
 
-4. El usuario registra su metodo de pago con tarjeta de credito, mediante una
-
-   cuenta simulada de 16 digitos (vinculado a su tabla dependiente).
-
-5. El usuario registra 6 pagos mensuales (al pagar, el usuario de conexion
-
-   activa el rol de "buyer").
-
-6. El sistema registra las transacciones bancarias: autoriza las primeras 5 y
-
-   rechaza la ultima por "limite excedido de credito".
-
-7. El sistema procesa la orden marcandola como atendida.
-
-8. El usuario recibe el pedido en el domicilio registrado.
-
-9. El usuario reclama la devolucion de un producto que llego danado.
-
-10. El sistema realiza el reenvio del producto en buenas condiciones.
-
-
-
-
-
-CASO DE PRUEBA 3: "Compra exitosa con cancelacion parcial, ajuste y reembolso parcial"
-
-Vista asociada: vw_practica04_caso_3
-
-
-
-1. Un usuario ya registrado (de los 10k disponibles) crea 1 carrito de compra
-
-   de 3 productos de la misma categoria con cantidades de 1 a 10 unidades.
-
+1. Un usuario ya registrado (de los 10,000 disponibles) crea 1 carrito de compra con 3 productos de la misma categoría en cantidades de 1 a 10 unidades.
 2. El usuario realiza la orden de compra.
-
-3. El usuario registra un domicilio para envio distinto a su hogar (por
-
-   ejemplo, con la etiqueta "Casa Papas").
-
-4. El usuario registra su metodo de pago con tarjeta digital (Spin), mediante
-
-   una cuenta simulada de 16 digitos (vinculado a su tabla dependiente).
-
+3. El usuario registra un domicilio de envío distinto a su hogar (por ejemplo, dirección con la etiqueta `"Casa Papás"`).
+4. El usuario registra su método de pago con tarjeta digital (Spin) mediante una cuenta simulada de 16 dígitos (vinculado a su tabla dependiente).
 5. El usuario registra un solo pago en efectivo por el costo total de la compra.
-
-6. El sistema procesa la orden marcandola como atendida.
-
+6. El sistema procesa la orden marcándola como atendida.
 7. El usuario cancela un producto del pedido.
-
-8. El sistema realiza la actualizacion y ajuste de la orden de compra.
-
-9. El sistema realiza el reembolso parcial correspondiente al monto de los
-
-   productos cancelados.
-
-10. El sistema realiza el envio del pedido restante.
-
+8. El sistema realiza la actualización de la orden de compra.
+9. El sistema realiza el reembolso del monto correspondiente a los productos cancelados.
+10. El sistema realiza el envío.
 11. El cliente recibe el pedido en el domicilio indicado.
 
+---
 
+### Caso de Prueba 4: Compra exitosa del mismo proveedor con entrega en punto de recolección
+> Orden concentrada en un solo proveedor con pago vía SPEI y entrega alternativa en punto de recolección por ausencia en el domicilio.
 
-
-
-CASO DE PRUEBA 4: "Compra exitosa del mismo proveedor con entrega en el punto de recoleccion"
-
-Vista asociada: vw_practica04_caso_4
-
-
-
-1. Un usuario ya registrado (de los 10k disponibles) crea 1 carrito de compra
-
-   de 3 productos del mismo proveedor con cantidades de 1 a 3 unidades.
-
+1. Un usuario ya registrado (de los 10,000 disponibles) crea 1 carrito de compra con 3 productos del mismo proveedor en cantidades de 1 a 3 unidades.
 2. El usuario realiza la orden de compra.
-
-3. El usuario registra su domicilio de hogar para envio.
-
-4. El usuario registra su metodo de pago con transferencia SPEI, mediante una
-
-   cuenta simulada de 16 digitos (vinculado a su tabla dependiente).
-
+3. El usuario registra su domicilio de hogar para el envío.
+4. El usuario registra su método de pago mediante transferencia SPEI con una cuenta simulada de 16 dígitos (vinculado a su tabla dependiente).
 5. El usuario registra un solo pago en efectivo por el costo total de la compra.
+6. El sistema procesa la orden marcándola como atendida.
+7. El sistema realiza el envío.
+8. El cliente recoge el pedido en el punto de recolección, dado que no hubo quien recibiera el paquete en el domicilio.
 
-6. El sistema procesa la orden marcandola como atendida.
+---
 
-7. El sistema realiza el envio.
+### Caso de Prueba 5: Compra fallida por falta de inventario
+> Validación de control de existencias que detiene el procesamiento de una orden y restituye el cupón de regalo al usuario.
 
-8. El cliente recoge el pedido en el punto de recoleccion dado que no hubo
-
-   quien recibiera el pedido en el domicilio.
-
-
-
-
-
-CASO DE PRUEBA 5: "Compra fallida por falta de inventario"
-
-Vista asociada: vw_practica04_caso_5
-
-
-
-1. Un usuario ya registrado (de los 10k disponibles) crea 1 carrito de compra
-
-   de 1 producto del mismo proveedor con cantidades de 1 a 5 unidades.
-
+1. Un usuario ya registrado (de los 10,000 disponibles) crea 1 carrito de compra con 1 producto del mismo proveedor en una cantidad de 1 a 5 unidades.
 2. El usuario realiza la orden de compra.
+3. El usuario registra su domicilio de hogar para el envío.
+4. El usuario registra su método de pago utilizando un cupón de regalo.
+5. El sistema procesa la orden marcándola como no atendida por falta de inventario.
+6. El sistema cancela la orden y reasigna el cupón utilizado.
 
-3. El usuario registra su domicilio de hogar para envio.
+---
 
-4. El usuario registra su metodo de pago utilizando un cupon de regalo.
+## Estructura del Proyecto
 
-5. El sistema procesa la orden marcandola como no atendida por falta de
-
-   inventario.
-
-6. El sistema cancela la orden y reasigna el cupon utilizado.
-
-
-
---------------------------------------------------------------------------------
-
-ESTRUCTURA DEL PROYECTO (Practica04)
-
---------------------------------------------------------------------------------
-
-
-
+```text
 Practica04/
+├── Bakups/
+│   ├── sql21noche.sql
+│   └── KULA.gif
+├── quiries/
+├── scripts/
+├── seeds/
+├── index.html
+├── modelo_eer.html
+├── diccionario_datos.html
+├── app.js
+├── datos_bd.js
+├── estilos.css
+├── parse_dump.py
+├── verify_dictionary.cjs
+└── README.md
+```
 
-|-- Bakups/                  Respaldo SQL (sql21noche.sql) y graficos (KULA.gif)
+---
 
-|-- quiries/                 Consultas y vistas SQL de los casos de prueba
-
-|-- scrips/                  Scripts de ejecucion y logica de simulacion
-
-|-- seeds/                   Datos semilla para poblar la base de datos
-
-|-- index.html               Portal principal de documentacion
-
-|-- diccionario_datos.html   Diccionario de datos interactivo
-
-|-- modelo_eer.html          Modelo Entidad-Relacion (EER) interactivo
-
-|-- app.js                   Logica de renderizado y navegacion web
-
-|-- datos_bd.js              Metadatos extraidos del respaldo SQL
-
-|-- estilos.css              Hoja de estilos (tema KOF / Kula)
-
-|-- parse_dump.py            Script para procesar el respaldo SQL
-
-|-- verify_dictionary.cjs    Verificador de integridad del diccionario
-
-|-- README.md                Documentacion de la practica
+<div align="center">
+  <sub>Desarrollado por <strong>SamePil21</strong> · Prácticas de Base de Datos en la Nube</sub>
+</div>
